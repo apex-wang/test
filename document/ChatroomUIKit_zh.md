@@ -2,7 +2,7 @@
 
 *English | [英文](ChatroomUIKit.md)*
 
-# [Demo](https://github.com/easemob/UIKit_Chatroom_android#demo)
+# [Demo](../app)
 
 在该项目中，我们在 `Example` 文件夹中提供了最佳实践示范项目，帮助你构建业务能力。
 
@@ -12,7 +12,7 @@
 
 # [ChatroomUIKit 集成指南](../document/ChatroomUIKit_zh.md#chatroomuikit-集成指南)
 
-## [概述](https://github.com/easemob/UIKit_Chatroom_android#概述)
+## [概述](../document/ChatroomUIKit_zh.md#概述)
 
 本指南介绍了 ChatroomUIKit 框架在 Android 开发中的概述和使用示例，描述了该 UIKit 的各个组件和功能，使开发人员能够很好地了解 UIKit 并有效地使用。
 
@@ -274,6 +274,6 @@ fun ChatroomUIKitTheme(
 
 apex-wang, [1746807718@qq.com](mailto:1746807718@qq.com)
 
-## [License](https://github.com/easemob/UIKit_Chatroom_android#license)
+## [许可证](../document/ChatroomUIKit_zh.md#license)
 
 ChatroomUIKit 采用 MIT 许可证。如欲了解更多信息，请参阅许可证文件。
