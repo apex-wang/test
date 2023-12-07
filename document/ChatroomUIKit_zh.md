@@ -8,7 +8,7 @@ In this project, there is a best practice demonstration project in the `Example`
 
 To experience functions of the ChatroomUIKit, you can scan the following QR code to try a demo.
 
-[![SampleDemo](https://github.com/apex-wang/ChatroomUIKit/blob/main/image/demo.png)](https://github.com/apex-wang/ChatroomUIKit/blob/main/image/demo.png).
+[![SampleDemo](https://github.com/apex-wang/ChatroomUIKit/blob/master/image/demo.png)](https://github.com/apex-wang/ChatroomUIKit/blob/master/image/demo.png).
 
 # [Chatroom UIKit Guide](https://github.com/apex-wang/ChatroomUIKit#chatroom-uikit-guide)
 
@@ -18,7 +18,7 @@ This guide presents an overview and usage examples of the ChatroomUIKit framewor
 
 ## [Table of Contents](https://github.com/apex-wang/ChatroomUIKit#table-of-contents)
 
-- [Requirements](https://github.com/apex-wang/ChatroomUIKit#requirements)
+- [Requirements](../ChatroomUIKit_zh#requirements)
 - [Installation](https://github.com/apex-wang/ChatroomUIKit#installation)
 - [Structure](https://github.com/apex-wang/ChatroomUIKit#structure)
 - [QuickStart](https://github.com/apex-wang/ChatroomUIKit#quickStart)
