@@ -18,7 +18,7 @@ This guide presents an overview and usage examples of the ChatroomUIKit framewor
 
 ## [Table of Contents](https://github.com/apex-wang/ChatroomUIKit#table-of-contents)
 
-- [Requirements](.../ChatroomUIKit_zh.md#requirements)
+- [Requirements](../document/ChatroomUIKit_zh.md#requirements)
 - [Installation](https://github.com/apex-wang/ChatroomUIKit#installation)
 - [Structure](https://github.com/apex-wang/ChatroomUIKit#structure)
 - [QuickStart](https://github.com/apex-wang/ChatroomUIKit#quickStart)
@@ -30,7 +30,7 @@ This guide presents an overview and usage examples of the ChatroomUIKit framewor
 - [Contributing](https://github.com/apex-wang/ChatroomUIKit#contributing)
 - [License](https://github.com/apex-wang/ChatroomUIKit#license)
 
-# [Requirements](.../ChatroomUIKit_zh.md#requirements)
+# [Requirements](../document/ChatroomUIKit_zh.md#requirements)
 
 - Jetpack Compose The minimum support for Android API 21, which is version 5.0
 - Android Studio Arctic Fox (2020.3.1) or Higher version
