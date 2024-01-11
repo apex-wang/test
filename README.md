@@ -1,79 +1,78 @@
 # ChatroomUIKit
 
-*English | [英文](README_EN.md)*
+*English | [中文](README.md)*
 
-# [Demo](./app)
+# [Sample demo](./app)
 
-在该项目中，我们在 `app` 文件夹中提供了最佳实践示范项目，帮助你构建业务能力。
+In this project, there is a best practice demonstration project in the `app` folder for you to build your own business capabilities.
 
-你可以扫描以下二维码体验 demo：
+To experience functions of the ChatroomUIKit, you can scan the following QR code to try a demo.
 
 [![SampleDemo](./image/demo.png)](./image/demo.png).
 
-# [ChatroomUIKit 集成指南](./README.md#chatroomuikit-集成指南)
+# [ChatroomUIKit Guide](./README_EN.md#chatroomuikit-guide)
 
-## [概述](./README.md#概述)
+## [Introduction](./README_EN.md#introduction)
 
-本指南介绍了 ChatroomUIKit 框架在 Android 开发中的概述和使用示例，描述了该 UIKit 的各个组件和功能，使开发人员能够很好地了解 UIKit 并有效地使用。
+This guide presents an overview and usage examples of the ChatroomUIKit framework in Android development, and describes various components and features of this UIKit, enabling developers to have a good understanding of the UIKit and make effective use of it.
 
-## [重要特性](./README.md#重要特性) 
+## [Important Features](./README_EN.md#important-features)
 
-### [通用特性](./README.md#通用特性)
-- 发送弹幕
-- 弹幕时间
-- 全局广播
-- 未读消息数
-- 打赏
-- 暗黑模式
+### [General Features](./README_EN.md#general-features)
+- Send messages
+- Messages timestamp
+- Global broadcasting
+- Unread message counts
+- Gift
+- Dark mode
 
-### [消息拓展特性](./README.md#消息拓展特性)
-- 举报
-- 翻译
-- 禁言
-- 撤回
+### [Message Extensions](./README_EN.md#message-extensions)
+- Report
+- Translate
+- Mute
+- Recall
 
-### [成员管理特性](./README.md#成员管理特性)
-- 成员列表
-- 成员搜索
-- 禁言
-- 已禁言列表
-- 移除成员
+### [Member Management](./README_EN.md#member-management)
+- Participant list
+- Search participants
+- Mute&Muted list
+- Remove participants
 
-## [目录](./README.md#目录)
+## [Table of Contents](./README_EN.md#table-of-contents)
 
-- [前提条件](./README.md#前提条件)
-- [安装](./README.md#安装)
-- [架构](./README.md#架构)
-- [快速开始](./README.md#快速开始)
-- [进阶用法](./README.md#进阶用法)
-- [自定义](./README.md#自定义)
-- [业务流程](./README.md#业务流程)
-- [API 时序图](./README.md#api-时序图)
-- [设计指南](./README.md#设计指南)
-- [贡献](./README.md#贡献)
-- [许可证](./README.md#许可证)
+- [Requirements](./README_EN.md#requirements)
+- [Installation](./README_EN.md#installation)
+- [Structure](./README_EN.md#structure)
+- [Quick Start](./README_EN.md#quick-start)
+- [Advanced Usage](./README_EN.md#advanced-usage)
+- [Customization](./README_EN.md#customization)
+- [Business Flowchart](./README_EN.md#business-flowchart)
+- [API Sequence Diagram](./README_EN.md#api-sequence-diagram)
+- [Design Guidelines](./README_EN.md#design-guidelines)
+- [Contributing](./README_EN.md#contributing)
+- [License](./README_EN.md#license)
 
-# [前提条件](./README.md#前提条件)
+# [Requirements](./README_EN.md#requirements)
 
-- Jetpack Compose 需使用 Android API 级别 21（Android 5.0）及以上
-- Android Studio Arctic Fox 2020.3.1 及以上
-- 使用 kotlin 语言
-- JDK 1.8 及以上
-- Gradle 7.0.0 及以上
+- Jetpack Compose that requires minimum Android API 21 (Android 5.0)
+- Android Studio Arctic Fox 2020.3.1 or higher
+- Use kotlin language
+- JDK 1.8 or higher
+- Gradle 7.0.0 or higher
 
-# [安装](./README.md#安装)
+# [Installation](./README_EN.md#installation)
 
-你可以通过 build.gradle 导入 ChatroomUIKi 库，作为 app 项目的依赖。
+You can use build.gradle to import the ChatroomUIKit library as a dependency for app projects.
 
-## [本地模块依赖](./README.md#本地模块依赖)
+## [Local module dependencies](./README_EN.md#Local-module-dependencies)
 
-找到 **ChatroomUIKit** 模块，将 [ChatroomUIKit](./ChatroomUIKit) 和 [ChatroomService](./ChatroomService) 模块导入到项目中。
+Locate the downloaded **ChatroomUIKit** module to import [ChatroomUIKit](./ChatroomUIKit) and [ChatroomService](./ChatroomService) modules to the project.
 
-1. 在 Android Studio 中打开你的项目。
+1. Open your project in Android Studio.
 
-2. 选择 **File** > **import Module**.
+2. Choose **File** > **import Module**.
 
-3. 查找并选择 **ChatroomUIKit**。
+3. Search for **ChatroomUIKit** and select it.
 
 ```
 // settings.gradle
@@ -88,50 +87,51 @@ dependencies {
 }
 ```
 
-## [远程模块依赖](./README.md#远程模块依赖)
+## [Remote module dependencies](./README_EN.md#remote-module-dependencies)
 
-将以下代码添加到 build.gradle 中：
+Add the following code line to build.gradle:
 
 ```
 implementation 'io.hyphenate:ease-chatroomui-kit:1.0.0'
 ```
 
-# [架构](./README.md#架构)
+# [Structure](./README_EN.md#structure)
 
-### [ChatroomUIKit 基本组件](./README.md#chatroomuikit-基本组件)
+### [Basic components of ChatroomUIKit](./README_EN.md#basic-components-of-chatroomuikit)
 
 ```
-┌─ Example                               // Demo 目录。
-│  ├─ ChatroomListActivity               // 主要提供聊天室列表 Activity。
-│  ├─ ChatroomActivity                   // 显示 ChatroomUIKit 聊天室 Activity。
-│  ├─ compose                            // Demo。
-│  ├─ http                               // 封装的网络请求，用于与 app 服务进行交互。
-│  └─ SplashActivity                     // 程序启动页面。
-├─ ChatroomService                       // ChatroomUIKit 协议模块。
-│  ├─ model                              // ChatroomUIKit 使用的实体对象（用户、聊天室信息和配置信息）。
-│  ├─ service                            // ChatroomUIKit 使用的协议和协议实现（聊天室协议、用户协议和礼物协议）。
+┌─ Example                               // Sample demo directory
+│  ├─ ChatroomListActivity               // Mainly providing room list Activity.
+│  ├─ ChatroomActivity                   // Displaying ChatroomUIKit chatroom Activity.
+│  ├─ compose                            // Sample demo.
+│  ├─ http                               // Encapsulated network requests for interaction with app services.
+│  └─ SplashActivity                     // Program launch page.
+├─ ChatroomService                       // ChatroomUIKit protocol module.
+│  ├─ model                              // The entity objects used by ChatroomUIKit (user, room information, and configuration information).
+│  ├─ service                            // The protocols and protocol implementations used by ChatroomUIKit (room protocol, user protocol, and gift protocol).
 │  │    └─ Protocol                        
-│  │         ├─ GiftService              // 礼物发送和接收频道。
-│  │         ├─ UserService              // 用于用户登录和用户属性更新的组件。
-│  │         └─ ChatroomService          // 用于实现聊天室管理协议的组件，包括加入和离开聊天室和发送和接收消息。
-│  └─ ChatroomUIKitClient                // ChatroomUIKit 初始化类。
+│  │         ├─ GiftService              // Gift sending and receiving channel.
+│  │         ├─ UserService              // Component for user login and user attribute update.
+│  │         └─ ChatroomService          // Component for implementing the protocol for chat room management, including joining and leaving the chat room and sending and receiving messages.
+│  └─ ChatroomUIKitClient                // ChatroomUIKit initialization class.
 └─ ChatroomUIKit            
-       ├─ compose                        // UI Compose （聊天室底部工具栏区域、消息列表、礼物列表和底部抽屉）
-       ├─ theme                          // 资源文件，提供项目所需的各种属性，例如颜色、字体、主题、渐变和大小。
-       ├─ viewModel                      // 数据处理。
-       ├─ widget                         // 输入组件。
-       └─ ui                             // 搜索 Activity。
+       ├─ compose                        // UI Compose (Bottom toolbar, message list, gift list, and bottom drawer).
+       ├─ theme                          // Resource files providing properties such as colors, fonts, themes, gradients, and sizes required for the project.  
+       ├─ viewModel                      // Data processing.
+       ├─ widget                         // Input widget.
+       └─ ui                             // Search Activity. 
 ```
-# [快速开始](./README.md#快速开始)
+# [Quick start](./README_EN.md#quick-start)
 
-本节介绍 ChatroomUIKit 各种组件的使用示例。`app` 文件夹中介绍了详细的代码和各种用例的项目。
+This guide provides several usage examples for different ChatroomUIKit components. Refer to the `app` folder for detailed code snippets and projects showing various use cases.
 
-按以下步骤在 Android Studio 中运行 Android 平台应用：
-1. 下载 Demo，保存到本地文件。
-2. 找到根目录下的 `local.properties` 文件夹，配置 `CHATROOM_APP_KEY` 和 `REQUEST_HOST`。
-3. 运行 Demo。
+Refer to the following steps to run the Android platform application in Android Studio:
 
-### [步骤 1 初始化 ChatroomUIKit](./README.md#步骤-1-初始化-chatroomuikit)
+1. Download the demo to the local file.
+2. Configure `CHATROOM_APP_KEY` and `REQUEST_HOST` in the `local.properties` folder in the root directory.
+3. Run the demo.
+
+### [Step 1: Initialize ChatroomUIKit](./README_EN.md#step-1-initialize-chatroomuikit)
 
 ```kotlin
 class ChatroomApplication : Application() {
@@ -153,23 +153,24 @@ class ChatroomApplication : Application() {
 }
 ```
 
-### [步骤 2 登录 ChatroomUIKit](./README.md#步骤-2-登录-chatroomuikit)
+### [Step 2: Log in to the ChatroomUIKit](./README_EN.md#step-2-log-in-to-the-chatroomuikit)
 
 ```kotlin
-// 利用符合 `UserInfoProtocol` 协议的当前用户对象中的用户信息，登录 ChatroomUIKit。
-// 关于如何在环信控制台上生成用户，详见 https://docs-im-beta.easemob.com/document/server-side/enable_and_configure_IM.html#创建-im-用户。
-// 从你的 app server 中获取 token，也可以在环信控制台的应用概述 > 用户认证页面获取临时 token 登录。
+// Log in to the ChatroomUIKit with the user information of the current user object that conforms to the `UserInfoProtocol` protocol.
+// The token needs to be obtained from your app server. You can also log in with a temporary token generated on the Agora Console.
+// To generate a user and a temporary user token on the Agora Console, see https://docs.agora.io/en/agora-chat/get-started/enable?platform=android#manage-users-and-generate-tokens.
 ChatroomUIKitClient.getInstance().login("user id","token")
 ```
 
-### [步骤 3 创建聊天室](./README.md#步骤-3-创建聊天室)
+### [Step 3: Create chat room](./README_EN.md#step-3-create-chat-room)
 
 ```kotlin
-// 1. 获取聊天室列表，加入聊天室。或者，在环信控制台创建聊天室。详见 https://docs-im-beta.easemob.com/document/server-side/enable_and_configure_IM.html#创建聊天室。
-// 2. 加载完整封装的聊天室场景组件 ComposeChatroom。
-// 3. 设置 ComposeChatroom 所需的参数。
-// 4. 在环信控制台上，将用户添加到聊天室中。详见 https://docs-im-beta.easemob.com/document/server-side/enable_and_configure_IM.html#创建聊天室。
-// 5. 加载 ComposeChatroom 视图，传入聊天室的 roomId 和聊天室所有者的 UserEntity 对象。
+// 1. Get a chat room list and join a chat room. Alternatively, create a chat room on the Agora Console.
+// 2. Load ComposeChatroom with setContent in activity. ComposeChatroom is a fully packaged chatroom scenario component. 
+// 3. Set the parameters required for ComposeChatroom.
+// 4. Add users to the chat room on the Console.
+// Choose Project Management > Operation Management > Chat Room. Select View Chat Room Members in the Action column of a chat room and add users to the chat room in the displayed dialog box.  
+// 5. Load the ComposeChatroom view and pass in the roomId and the UserEntity object of the room owner.
 class ChatroomActivity : ComponentActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -180,13 +181,13 @@ class ChatroomActivity : ComponentActivity(){
 }
 ```
 
-[![CreateChatroom](./image/CreateChatroom.png)](./image/CreateChatroom.png).
+[![CreateChatroom](./image/CreateChatroomA.png)](./image/CreateChatroomA.png).
 
-# [进阶用法](./README.md#进阶用法)
+# [Advanced Usage](./README_EN.md#advanced-usage)
 
-本节介绍三个进阶用法。
+Here are three examples of advanced usage.
 
-### [1.初始化聊天室 compose](./README.md#1初始化聊天室-compose)
+### [1.Initialize the chat room compose](./README_EN.md#1initialize-the-chat-room-compose)
 
 ```kotlin
     val chatroomUIKitOptions = ChatroomUIKitOptions(
@@ -200,7 +201,7 @@ class ChatroomActivity : ComponentActivity(){
 ChatroomUIKitClient.getInstance().setUp(applicationContext = applicationContext,appKey = "Your AppKey",options = chatroomUIKitOptions)
 ```
 
-### [2.登录 ChatroomUIKit](./README.md#2登录-chatroomuikit)
+### [2.Log in to ChatroomUIKit](./README_EN.md#2log-in-to-chatroomuikit)
 
 ```kotlin
 class YourAppUser: UserInfoProtocol {
@@ -215,25 +216,25 @@ class YourAppUser: UserInfoProtocol {
     var identity: String =  "you user level symbol url"
 
 }
-// 利用符合 `UserInfoProtocol` 协议的当前用户对象中的用户信息，登录 ChatroomUIKit。
-// 从你的 app server 中获取 token，也可以在环信控制台的应用概述 > 用户认证页面获取临时 token 登录。
+// Use the user information of the current user object that conforms to the UserInfoProtocol protocol to log in to ChatroomUIKit.
+// You need to get a user token from your app server. Alternatively, you can use a temporary token. To generate a temporary token, visit https://docs.agora.io/en/agora-chat/get-started/enable?platform=android#generate-a-user-token.
 ChatroomUIKitClient.getInstance().login(YourAppUser, token, onSuccess = {}, onError = {code,error ->})
 ```
 
-### [3.监听 ChatroomUIKit 事件和错误](./README.md#3监听-chatroomuikit-事件和错误)
+### [3.Listen for ChatroomUIKit events and errors](./README_EN.md#3listen-for-chatroomuikit-events-and-errors)
 
-你可以调用 `registerRoomResultListener` 方法监听 ChatroomUIKit 事件和错误。
+You can call the `registerRoomResultListener` method to listen for ChatroomUIKit events and errors.
 
 ```kotlin
 ChatroomUIKitClient.getInstance().registerRoomResultListener(this)
 ```
 
-# [自定义](./README.md#自定义)
+# [Customization](./README_EN.md#customization)
 
-### [修改可配置项](./README.md#修改可配置项)
+### [Modify configurable items](./README_EN.md#modify-configurable-items)
 
 ```kotlin
-// 修改 UiOptions 中的可配项。例如，你可以修改 UiOptions 中的 useGiftsInList 配置消息列表上是否显示礼物。
+// Modify a configurable item in UiOptions. For example, you can configure useGiftsInList in UiOptions to determine whether gifts are displayed in the message list. 
 val chatroomUIKitOptions = ChatroomUIKitOptions(
       uiOptions = UiOptions(
       targetLanguageList = listOf(GlobalConfig.targetLanguage.code),
@@ -241,7 +242,7 @@ val chatroomUIKitOptions = ChatroomUIKitOptions(
     )
 )
 
-// 修改 ViewModel 中的可配项。例如，你可以修改 MessageListViewModel 中的可配项，配置是否显示时间和头像。
+// Modify a configurable item in ViewModel. For example, you can modify configuration items in MessageListViewModel to determine whether to display the time and avatar.
 class MessageListViewModel(
   private val isDarkTheme: Boolean? = false,
   private val showDateSeparators: Boolean = true,
@@ -253,9 +254,9 @@ class MessageListViewModel(
 )
 ```
 
-### [自定义主题](./README.md#自定义主题)
+### [Customize the theme](./README_EN.md#customize-the-theme)
 
-你可以通过更新主题相关的配置项来自定义主题。若对任何配置项不做修改，可以使用默认主题。
+You can update the theme-related configurable items to customize the theme. If no configurable item is modified, you can use the default theme.
 
 ```kotlin
 @Composable
@@ -269,34 +270,34 @@ fun ChatroomUIKitTheme(
 )
 ```
 
-# [业务流程](./README.md#业务流程)
+# [Business Flowchart](./README_EN.md#business-flowchart)
 
-下图为整个业务请求和回调逻辑。
+The following figure presents the entire logic of business requests and callbacks.
 
 ![Overall flow diagram of business logic](./image/BusinessFlowchartA.png)
 
-# [API 时序图](./README.md#api-时序图)
+# [API Sequence Diagram](./README_EN.md#api-sequence-diagram)
 
-下图为 `app` 项目中的最佳实践 API 调用时序图。
+The following figure is the best-practice API calling sequence diagram in the `app` project.
 
 ![APIUML](./image/Api.png)
 
-# [设计指南](./README.md#设计指南)
+# [Design Guidelines](./README_EN.md#design-guidelines)
 
-关于设计指南和细节中的任何问题，可以在 Figma 设计稿中添加标注，然后 @ 我们的设计师 Stevie Jiang。
+For any questions about design guidelines and details, you can add comments to the Figma design draft and mention our designer Stevie Jiang.
 
-- [UI 设计稿](https://www.figma.com/community/file/1322495388317476706/chatroom-uikit).
+See the [UI design drawing](https://www.figma.com/community/file/1322495388317476706/chatroom-uikit).
 
-- [UI 设计指南](https://docs-im-beta.easemob.com/uikit/chatroomuikit/android/design_guide.html)
+See the [UI design guidelines](https://docs-im-beta.easemob.com/uikit/chatroomuikit/android/design_guide.html)
 
-# [贡献](https://github.com/easemob/UIKit_Chatroom_android#贡献)
+# [Contributing](./README_EN.md#contributing)
 
-我们随时欢迎各种形式的贡献和建议。如有任何问题或改进意见，你可以创建问题或提交 PR。
+Contributions and feedback are welcome! For any issues or improvement suggestions, you can open an issue or submit a pull request.
 
-## [作者](./README.md#作者)
+## [Author](./README_EN.md#author)
 
 apex-wang, [1746807718@qq.com](mailto:1746807718@qq.com)
 
-## [许可证](./README.md#许可证)
+## [License](./README_EN.md#license)
 
-ChatroomUIKit 采用 MIT 许可证。如欲了解更多信息，请参阅许可证文件。
+ChatroomUIKit is available under the MIT license. See the LICENSE file for more information.
